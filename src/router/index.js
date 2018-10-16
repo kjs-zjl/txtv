@@ -2,15 +2,13 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import recommend from '../views/recommend'
 import channel from '../views/channel'
+import allVip from '../views/channel/all-vip'
 import seed from '../views/seed'
 import live from '../views/live'
 import person from '../views/person'
-// import error from '../views/404'
+import error from '../views/404'
 import download from '../views/common/download/index'
 import myVideos from '../views/common/download/my-videos'
-import detail from '../views/channel/detail'
-import detail2 from '../views/channel/detail2'
-import detail3 from '../views/channel/detail3'
 
 Vue.use(Router)
 
@@ -24,11 +22,11 @@ export default new Router({
     //   path: '*',
     //   redirect: '/404'
     // },
-    // {
-    //   path: '/404',
-    //   name: '404',
-    //   component: error
-    // },
+    {
+      path: '*',
+      name: '404',
+      component: error
+    },
     {
       path: '/recommend',
       name: 'recommend',
@@ -60,26 +58,33 @@ export default new Router({
       },
       children: [
         {
-          path: '/channel/detail',
-          name: 'detail',
-          component: detail,
+          path: '/channel/download',
+          name: 'download',
+          component: download,
           children: [
             {
-              path: '/channel/detail/detail2',
-              name: 'detail2',
-              component: detail2,
+              path: '/channel/download/myVideos',
+              name: 'myVideos',
+              component: myVideos
+            }
+          ]
+        },
+        {
+          path: '/channel/allVip',
+          name: 'allVip',
+          component: allVip,
+          children: [
+            {
+              path: '/channel/allVip/download',
+              name: 'download',
+              component: download,
               children: [
                 {
-                  path: '/channel/detail/detail2/detail3',
-                  name: 'detail3',
-                  component: detail3
+                  path: '/channel/allVip/download/myVideos',
+                  name: 'myVideos',
+                  component: myVideos
                 }
               ]
-            },
-            {
-              path: '/channel/detail/detail3',
-              name: 'detail3',
-              component: detail3
             }
           ]
         }

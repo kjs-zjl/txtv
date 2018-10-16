@@ -7,6 +7,8 @@
       mt-tab-item(id="category") 分类
       mt-tab-item(id="search") 搜索
     .mint-tab-item-label(@click="go_download('/recommend/download')",slot="right") 下载
+  mt-header(title="频道",v-else-if="type === 'channel'",fixed)
+    .mint-tab-item-label(@click="go_download('/channel/download')",slot="right") 下载
   mt-header.seed-head(v-else-if="type === 'seed'",fixed)
     .search-bar(slot="left")
       span 种子
@@ -44,7 +46,7 @@ export default {
   },
   methods: {
     go_download (path) {
-      this.$router.push({path})
+      this.$router.push({ path })
     }
   },
   created () {

@@ -23,6 +23,11 @@ export default {
     selected (val) {
       this.$router.push({ path: val })
     }
+    // 从404页面回撤
+    // $route (obj) {
+    //   this.selected = obj.name
+    //   console.log(obj)
+    // }
   },
   created () {
     this.selected = this.$route.name

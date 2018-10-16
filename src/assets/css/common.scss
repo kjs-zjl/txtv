@@ -47,7 +47,7 @@ body,
   bottom: 0;
   left: 0;
   width: 100%;
-  ._full_inner{
+  ._full_inner {
     padding-top: 40px;
   }
 }
@@ -55,6 +55,7 @@ body,
 ._scroll {
   overflow: auto;
 }
+
 ._cover-content {
   position: relative;
   width: 100%;
@@ -66,6 +67,12 @@ body,
   transform: translate3d(0%, 0, 0);
   background-color: #efeff4;
   box-shadow: 0px 0 41px rgba(0, 0, 0, 0.1);
+}
+
+// 修改mint-ui
+.mint-tab-container {
+  height: 100%;
+  overflow: auto !important;
 }
 
 // 单行省略
