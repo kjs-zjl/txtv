@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 import store from './vuex/store'
 
-// 全局引入mint-ui
+// 全局引入 mint-ui
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 Vue.use(MintUI)
